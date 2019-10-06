@@ -1,4 +1,6 @@
+// 'react' library allows us to write HTML syntax inside a javascript file
 import React from 'react';
+// react-dom actually interact with DOM 
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
