@@ -33,5 +33,7 @@ class App extends Component {
 	}
 }
 
+// {'inside curly brackets is Javascript expression'}
+// when the state is changed, the render() method will be called again
 
 export default App;
