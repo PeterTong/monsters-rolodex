@@ -11,7 +11,8 @@ class App extends Component {
     super();
 
     this.state = {
-      monsters: []
+			monsters: [],
+			searchField: ''
     };
   }
 
@@ -23,8 +24,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+				{/* e  represent the synthetic event */}
+				{/* setState is a Asynchronous function, so the state will be updated  after entering text into search bar next times */}
+				<input type='search' 
+							 placeholder='search monsters' 
+							 onChange={e => this.setState({ searchField: e.target.value })}>
+				 </input>
         <CardList monsters={this.state.monsters}>
-          
+        
         </CardList>
       </div>
     );
