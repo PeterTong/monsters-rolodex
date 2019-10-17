@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import logo from './logo.svg';
 import { CardList } from "./components/card-list/card-list.component";
-
+import { SearchBox } from "./components/search-box/search-box.component";
 import "./App.css";
 
 // using class component, we can access this thing called state.
@@ -36,10 +36,15 @@ class App extends Component {
 				{/* onChange is a synthetic event, in any time it will run this function setState once. 
 				not calling the render() method again and again since setState will trigger the render() method */}
 				{/* https://reactjs.org/docs/events.html */}
-				<input type='search' 
+				{/* <input type='search' 
 							 placeholder='search monsters' 
 							 onChange={e => this.setState({ searchField: e.target.value })}>
-				 </input>
+				 </input> */}
+				<SearchBox 
+					placeholder='search monsters'
+					handleChange={e => this.setState({ searchField: e.target.value })}>
+
+				</SearchBox>
         <CardList monsters={filteredMonsters}>
         
         </CardList>
