@@ -20,7 +20,15 @@ class App extends Component {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then(response => response.json())
       .then(users => this.setState({ monsters: users }));
-  }
+	}
+	
+	handleChange = e => {
+// Which means that when javascript first created our app component it also defined all of the methods
+// on our components including handle change and it saw that this was an arrow function and because of
+// this when this arrow function came into existence to JavaScript it was going to bind any references
+// to this inside of it to the context in which it was defined which is our app component 
+		this.setState({ searchField: e.target.value });
+	}
   render() {
 		// make a new array, because don't want to modify the raw data (monsters array)
 		// Destructure concept. it pulls the properites off of the object and set them to constant
@@ -42,7 +50,7 @@ class App extends Component {
 				 </input> */}
 				<SearchBox 
 					placeholder='search monsters'
-					handleChange={e => this.setState({ searchField: e.target.value })}>
+					handleChange={this.handleChange}>
 
 				</SearchBox>
         <CardList monsters={filteredMonsters}>
