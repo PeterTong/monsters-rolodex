@@ -39,6 +39,7 @@ class App extends Component {
 
     return (
       <div className="App">
+				<h1> Monsters Rolodex </h1>
 				{/* e  represent the synthetic event */}
 				{/* setState is a Asynchronous function, so the state will be updated  after entering text into search bar next times */}
 				{/* onChange is a synthetic event, in any time it will run this function setState once. 
